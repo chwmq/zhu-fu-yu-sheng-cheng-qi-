@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新年祝福语生成器</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f8ff;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 80%;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        #messageOutput {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>新年祝福语生成器</h1>
+        <input type="text" id="nameInput" placeholder="请输入收礼人姓名">
+        <button onclick="generateMessage()">生成祝福</button>
+        <p id="messageOutput"></p>
+    </div>
+    <script>
+        function generateMessage() {
+            const name = document.getElementById('nameInput').value;
+            const messageOutput = document.getElementById('messageOutput');
+            
+            const messages = [
+                `新年快乐，${name}！愿你在新的一年里万事如意，幸福安康！`,
+                `亲爱的${name}，新年快乐！愿你新的一年里心想事成，万事顺心！`,
+                `${name}，新年快乐！愿你新的一年里阖家欢乐，万事如意！`,
+                `新年快乐，${name}！愿你新的一年里健康平安，事业有成！`,
+                `${name}，新年快乐！愿你新的一年里笑口常开，幸福美满！`,
+
+                `${name}，新年到啦，愿你在新的一年里，事业如龙腾虎跃，蒸蒸日上；生活似花团锦簇，幸福美满。祝你蛇年大吉，万事胜意！`,
+`${name}，值此新春佳节，愿你烦恼清零，快乐满格。在蛇年里，好运连连，如春日之苗，不见其增，日有所长。祝你新年快乐，阖家安康！`,
+`${name}，蛇年已至，愿你开启全新的篇章，梦想如璀璨星辰，熠熠生辉；前程似锦绣山河，一马平川。祝你新年新气象，心想事成！`,
+`${name}，在新的一年里，愿你的生活充满阳光与欢笑，事业顺遂，家庭和睦。蛇年大吉，愿你收获满满的幸福与喜悦！`,
+`${name}，新春来临，愿你拥有蛇的灵动与智慧，面对困难游刃有余；享受生活的美好，每一天都充满希望。祝你新年快乐，万事如意！`,
+`${name}，蛇年新岁启封，愿你所有的付出都能收获回报，所有的期待都能如约而至。祝你新年新气象，幸福满心间！`,
+`${name}，祝你在蛇年里，好运常伴，健康永驻。愿你的人生之路越走越宽广，生活越来越甜蜜，新年快乐！`,
+`${name}，新年到，愿你心情似春花般绚烂，事业如春潮般涌动。在蛇年里，开启属于你的辉煌篇章，祝你新年快乐，好运连连！`,
+`${name}，愿蛇年为你带来新的机遇与挑战，愿你勇敢前行，收获满满。祝你新年新希望，新岁启封，万事顺遂！`,
+`${name}，新春佳节，愿你拥有一个温馨团圆的假期，新的一年里，梦想成真，幸福安康。祝你蛇年大吉，一切顺心！`
+            ];
+
+            if (name) {
+                const randomIndex = Math.floor(Math.random() * messages.length);
+                messageOutput.textContent = messages[randomIndex];
+            } else {
+                messageOutput.textContent = '请输入收礼人姓名以生成祝福语。';
+            }
+        }
+    </script>
+</body>
+</html>
